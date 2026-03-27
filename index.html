@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>佐藤の空き予定</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #fff;
+    color: #333;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  h1 {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 4px;
+    color: #333;
+  }
+  .subtitle {
+    text-align: center;
+    font-size: 0.75em;
+    color: #999;
+    margin-bottom: 16px;
+  }
+  .legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 16px;
+    font-size: 0.8em;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-box {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+  }
+  .legend-box.free { background: #4CAF50; border-color: #4CAF50; }
+  .legend-box.busy { background: #eee; }
+  .week-grid {
+    margin-bottom: 24px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+  }
+  .header-row, .row {
+    display: grid;
+    grid-template-columns: 44px repeat(7, 1fr);
+  }
+  .day-header {
+    text-align: center;
+    padding: 8px 2px;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: #555;
+    border-bottom: 1px solid #e0e0e0;
+    background: #f5f5f5;
+  }
+  .day-header.today {
+    color: #4CAF50;
+    background: rgba(76, 175, 80, 0.08);
+  }
+  .day-header.weekend { color: #e57373; }
+  .day-header.empty { background: transparent; border: none; }
+  .day-header small { font-weight: 400; opacity: 0.7; }
+  .time-label {
+    font-size: 0.65em;
+    color: #aaa;
+    text-align: right;
+    padding-right: 4px;
+    line-height: 18px;
+    min-height: 18px;
+  }
+  .slot {
+    min-height: 18px;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+  }
+  .slot.busy {
+    background: #f0f0f0;
+  }
+  .slot.free {
+    background: #4CAF50;
+  }
+  .slot.weekend.free {
+    background: #66BB6A;
+  }
+  .slot.empty-day {
+    background: transparent;
+    border: none;
+  }
+  .tz-note {
+    text-align: center;
+    font-size: 0.7em;
+    color: #aaa;
+    margin-top: 8px;
+  }
+  @media (max-width: 600px) {
+    body { padding: 10px; }
+    .time-label { font-size: 0.55em; padding-right: 2px; }
+    .slot { min-height: 14px; }
+  }
+</style>
+</head>
+<body>
+<h1>佐藤の空き予定</h1>
+<div class="subtitle">更新: 2026-03-27 15:09 JST</div>
+<div class="legend">
+  <div class="legend-item"><div class="legend-box free"></div>空き</div>
+  <div class="legend-item"><div class="legend-box busy"></div>予定あり</div>
+</div>
+
+        <div class="week-grid">
+            <div class="header-row">
+                <div class="time-label"></div>
+                <div class="day-header empty"></div><div class="day-header empty"></div><div class="day-header empty"></div><div class="day-header empty"></div><div class="day-header today">3/27<br><small>金</small></div><div class="day-header  weekend">3/28<br><small>土</small></div><div class="day-header  weekend">3/29<br><small>日</small></div>
+            </div>
+            <div class="row"><div class="time-label">9:00</div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot free"></div><div class="slot free weekend"></div><div class="slot busy weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot free"></div><div class="slot free weekend"></div><div class="slot busy weekend"></div></div>
+<div class="row"><div class="time-label">10:00</div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot free"></div><div class="slot free weekend"></div><div class="slot busy weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot free"></div><div class="slot free weekend"></div><div class="slot busy weekend"></div></div>
+<div class="row"><div class="time-label">11:00</div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot free"></div><div class="slot free weekend"></div><div class="slot busy weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot free"></div><div class="slot free weekend"></div><div class="slot busy weekend"></div></div>
+<div class="row"><div class="time-label">12:00</div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot busy"></div><div class="slot busy weekend"></div><div class="slot busy weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot busy"></div><div class="slot busy weekend"></div><div class="slot busy weekend"></div></div>
+<div class="row"><div class="time-label">13:00</div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot free"></div><div class="slot busy weekend"></div><div class="slot busy weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot free"></div><div class="slot busy weekend"></div><div class="slot busy weekend"></div></div>
+<div class="row"><div class="time-label">14:00</div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot free"></div><div class="slot busy weekend"></div><div class="slot busy weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot free"></div><div class="slot busy weekend"></div><div class="slot busy weekend"></div></div>
+<div class="row"><div class="time-label">15:00</div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot free"></div><div class="slot busy weekend"></div><div class="slot busy weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot free"></div><div class="slot busy weekend"></div><div class="slot busy weekend"></div></div>
+<div class="row"><div class="time-label">16:00</div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot free"></div><div class="slot free weekend"></div><div class="slot busy weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot busy"></div><div class="slot busy weekend"></div><div class="slot busy weekend"></div></div>
+<div class="row"><div class="time-label">17:00</div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot free"></div><div class="slot free weekend"></div><div class="slot busy weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot free"></div><div class="slot free weekend"></div><div class="slot busy weekend"></div></div>
+<div class="row"><div class="time-label">18:00</div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot free"></div><div class="slot free weekend"></div><div class="slot busy weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot free"></div><div class="slot free weekend"></div><div class="slot busy weekend"></div></div>
+<div class="row"><div class="time-label">19:00</div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot free"></div><div class="slot busy weekend"></div><div class="slot busy weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot free"></div><div class="slot free weekend"></div><div class="slot busy weekend"></div></div>
+<div class="row"><div class="time-label">20:00</div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot free"></div><div class="slot free weekend"></div><div class="slot busy weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot busy weekend"></div></div>
+<div class="row"><div class="time-label">21:00</div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot busy weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot busy weekend"></div></div>
+
+        </div>
+        
+        <div class="week-grid">
+            <div class="header-row">
+                <div class="time-label"></div>
+                <div class="day-header ">3/30<br><small>月</small></div><div class="day-header ">3/31<br><small>火</small></div><div class="day-header ">4/1<br><small>水</small></div><div class="day-header ">4/2<br><small>木</small></div><div class="day-header ">4/3<br><small>金</small></div><div class="day-header  weekend">4/4<br><small>土</small></div><div class="day-header  weekend">4/5<br><small>日</small></div>
+            </div>
+            <div class="row"><div class="time-label">9:00</div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+<div class="row"><div class="time-label">10:00</div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+<div class="row"><div class="time-label">11:00</div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+<div class="row"><div class="time-label">12:00</div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+<div class="row"><div class="time-label">13:00</div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+<div class="row"><div class="time-label">14:00</div><div class="slot busy"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+<div class="row"><div class="time-label">15:00</div><div class="slot busy"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+<div class="row"><div class="time-label">16:00</div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+<div class="row"><div class="time-label">17:00</div><div class="slot free"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+<div class="row"><div class="time-label">18:00</div><div class="slot free"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+<div class="row"><div class="time-label">19:00</div><div class="slot free"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+<div class="row"><div class="time-label">20:00</div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+<div class="row"><div class="time-label">21:00</div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free weekend"></div><div class="slot free weekend"></div></div>
+
+        </div>
+        
+        <div class="week-grid">
+            <div class="header-row">
+                <div class="time-label"></div>
+                <div class="day-header ">4/6<br><small>月</small></div><div class="day-header ">4/7<br><small>火</small></div><div class="day-header ">4/8<br><small>水</small></div><div class="day-header ">4/9<br><small>木</small></div><div class="day-header empty"></div><div class="day-header empty"></div><div class="day-header empty"></div>
+            </div>
+            <div class="row"><div class="time-label">9:00</div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+<div class="row"><div class="time-label">10:00</div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+<div class="row"><div class="time-label">11:00</div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+<div class="row"><div class="time-label">12:00</div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+<div class="row"><div class="time-label">13:00</div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+<div class="row"><div class="time-label">14:00</div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+<div class="row"><div class="time-label">15:00</div><div class="slot busy"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+<div class="row"><div class="time-label">16:00</div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+<div class="row"><div class="time-label">17:00</div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+<div class="row"><div class="time-label">18:00</div><div class="slot busy"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot free"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+<div class="row"><div class="time-label">19:00</div><div class="slot busy"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot busy"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+<div class="row"><div class="time-label">20:00</div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+<div class="row"><div class="time-label">21:00</div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+<div class="row"><div class="time-label"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot free"></div><div class="slot empty-day"></div><div class="slot empty-day"></div><div class="slot empty-day"></div></div>
+
+        </div>
+        
+<div class="tz-note">日本時間 (JST / UTC+9)</div>
+</body>
+</html>
